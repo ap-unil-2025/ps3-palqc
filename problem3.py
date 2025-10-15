@@ -19,6 +19,7 @@ def get_numbers_from_user():
         # TODO: Try to convert to float and add to list
         # TODO: Handle invalid input gracefully
         number=input()
+
         try:
             number=float(number)
             numbers.append(number)
@@ -26,7 +27,7 @@ def get_numbers_from_user():
             if number.lower()=="done":
                 return numbers
             else:
-                print("Invalid input. Enter numbers one at a time. Type 'done' when finished.")
+                print("Invalid input. Enter numbers one at a time. Type 'done' when finished. ")
 
 
 def analyze_numbers(numbers):
