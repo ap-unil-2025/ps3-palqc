@@ -49,8 +49,6 @@ def analyze_numbers(numbers):
     if not numbers:
         return None
 
-    analysis = {}
-
     # TODO: Calculate count
     # TODO: Calculate sum
     # TODO: Calculate average
@@ -58,21 +56,27 @@ def analyze_numbers(numbers):
     # TODO: Find maximum
     # TODO: Count even numbers (hint: use modulo operator)
     # TODO: Count odd numbers
-    count=len(numbers)
+    cnt=len(numbers)
     i=0
-    sum=0
+    total=sum(numbers)
     even_count=0
     odd_count=0
-    while i<count:
-        sum+=numbers[i]
+    while i<cnt:
         if numbers[i]%2==0:
             even_count+=1
         else:
             odd_count+=1
         i+=1
-    average=sum/count
-    analysis.update({"Count: ":count,"Sum: ":sum,"Average: ":format(average,".2f"),"Minimum: ":min(numbers),"Maximum: ":max(numbers),"Even numbers: ":even_count,"Odd numbers: ":odd_count})
-    return analysis
+    avg=total/cnt
+    return {
+        "count": cnt,
+        "sum": total,
+        "average": round(avg, 2),  # float arrondi, pas string
+        "minimum": min(numbers),
+        "maximum": max(numbers),
+        "even_count": even_count,
+        "odd_count": odd_count,
+    }
 
 
 def display_analysis(analysis):
